@@ -5,8 +5,9 @@ import { authMiddleware } from "../middleware/auth-middleware.js";
 const userRouter = new express.Router();
 
 userRouter.use(authMiddleware);
-userRouter.get("/api/user/current" , userController.get);
-userRouter.patch("/api/user/current" , userController.update);
+userRouter.get("/api/users/current" , userController.get);
+userRouter.patch("/api/users/current" , userController.update);
+userRouter.delete("/api/users/logout" , userController.logout);
 
 export {
     userRouter
